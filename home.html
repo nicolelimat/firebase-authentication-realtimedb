@@ -40,15 +40,15 @@
 
       // Configuração do Firebase para conectar com o banco de dados
       // NÃO DESCOMENTAR ATÉ O FIM DO MINICURSO!!!
-      const firebaseConfig = {
-        apiKey: "AIzaSyDIbH6dSzqjglcNq2IZu28vnqtB9gtNhBE",
-        authDomain: "workshop-comp.firebaseapp.com",
-        databaseURL: "https://workshop-comp-default-rtdb.firebaseio.com",
-        projectId: "workshop-comp",
-        storageBucket: "workshop-comp.appspot.com",
-        messagingSenderId: "224981385074",
-        appId: "1:224981385074:web:475a0d9b747392758127eb",
-      };
+      // const firebaseConfig = {
+      //   apiKey: "AIzaSyDIbH6dSzqjglcNq2IZu28vnqtB9gtNhBE",
+      //   authDomain: "workshop-comp.firebaseapp.com",
+      //   databaseURL: "https://workshop-comp-default-rtdb.firebaseio.com",
+      //   projectId: "workshop-comp",
+      //   storageBucket: "workshop-comp.appspot.com",
+      //   messagingSenderId: "224981385074",
+      //   appId: "1:224981385074:web:475a0d9b747392758127eb",
+      // };
 
       // Inicializa o Firebase
       const app = initializeApp(firebaseConfig);
@@ -57,7 +57,6 @@
       const auth = getAuth(app);
     </script>
 
-    <!-- Script principal que realiza o CRUD no banco de dados -->
     <script type="module" src="js/script.js"></script>
   </body>
 </html>

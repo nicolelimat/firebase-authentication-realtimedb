@@ -3,10 +3,10 @@ body {
   font-family: "Comic Sans MS", cursive, sans-serif;
   color: #ff66b2;
   display: flex;
-  flex-direction: column; /* Permite empilhar os elementos verticalmente */
-  align-items: center; /* Centraliza os itens horizontalmente */
+  flex-direction: column;
+  align-items: center;
   margin: 0;
-  padding: 20px; /* Espaçamento em torno do conteúdo */
+  padding: 20px;
   animation: fadeIn 2s ease;
 }
 
@@ -18,8 +18,8 @@ body {
   padding: 20px;
   box-shadow: 0 4px 10px rgba(0, 0, 0, 0.2);
   width: 90%;
-  max-width: 500px; /* Aumenta a largura máxima */
-  min-height: 300px; /* Define uma altura mínima */
+  max-width: 500px;
+  min-height: 300px;
 }
 header {
   text-align: center;
@@ -89,12 +89,11 @@ textarea {
   margin-bottom: 10px;
   font-family: inherit;
   resize: none;
-  display: block; /* Garante que o textarea seja tratado como bloco */
-  margin-left: auto; /* Centraliza horizontalmente */
-  margin-right: auto; /* Centraliza horizontalmente */
+  display: block;
+  margin-left: auto;
+  margin-right: auto;
 }
 
-/* Animations */
 @keyframes fadeIn {
   from {
     opacity: 0;
