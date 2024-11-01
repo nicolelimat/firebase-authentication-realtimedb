@@ -23,6 +23,7 @@ onAuthStateChanged(auth, (user) => {
   if (user) {
     autorFixo = "🐰 Coelhin " + (user.displayName || "Sem Nome");
     console.log("Usuário autenticado:", autorFixo);
+    e;
   } else {
     console.log("Usuário não autenticado");
   }
@@ -43,7 +44,6 @@ function salvarPensamento() {
     autor: autorFixo,
   });
 
-  // Limpa o campo de entrada após salvar
   document.getElementById("note").value = "";
 }
 
@@ -71,8 +71,6 @@ function carregarPensamentos() {
   const listaPensamentos = document.getElementById("noteList");
   onValue(ref(db, "pensamentos"), (snapshot) => {
     listaPensamentos.innerHTML = "";
-    r;
-
     snapshot.forEach((childSnapshot) => {
       const pensamentoId = childSnapshot.key;
       const pensamentoData = childSnapshot.val();
@@ -87,6 +85,14 @@ function carregarPensamentos() {
         </li>
       `
       );
+
+      const listItem = document.createElement("li");
+      listItem.innerHTML = `
+        <strong>${pensamentoData.autor}</strong>: ${pensamentoData.pensamento}
+        <button onclick="editarPensamento('${pensamentoId}', prompt('Edite o pensamento:', '${pensamentoData.pensamento}'))">Editar</button>
+        <button onclick="excluirPensamento('${pensamentoId}')">Excluir</button>
+      `;
+      listaPensamentos.appendChild(listItem);
     });
   });
 }
