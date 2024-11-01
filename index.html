@@ -1,0 +1,56 @@
+<!DOCTYPE html>
+<html lang="pt-br">
+  <head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>Diário dos Coelhinhos</title>
+    <link rel="stylesheet" href="css/style.css" />
+    <link rel="icon" href="assets/image.png" type="image/png" />
+  </head>
+  <body>
+    <div class="container">
+      <header>
+        <h1>🐰 Diário dos Coelhinhos 🐰</h1>
+        <p>Compartilhe seus pensamentos fofos e inspire outros coelhinhos!</p>
+      </header>
+
+      <!-- Campo para escrever o pensamento -->
+      <textarea
+        id="note"
+        placeholder="Escreva seu pensamento fofo de coelhinho..."
+      ></textarea>
+      <button onclick="salvarPensamento()">Salvar Pensamento 💭</button>
+
+      <!-- Lista para exibir os pensamentos salvos -->
+      <div id="pensamentosSalvos">
+        <h2>Pensamentos Salvos:</h2>
+        <ul id="noteList"></ul>
+      </div>
+    </div>
+
+    <!-- Importa o SDK do Firebase e inicializa o app -->
+    <script type="module">
+      import { initializeApp } from "https://www.gstatic.com/firebasejs/11.0.1/firebase-app.js";
+      import { getDatabase } from "https://www.gstatic.com/firebasejs/11.0.1/firebase-database.js";
+
+      // Configuração do Firebase para conectar com o banco de dados
+      // NÃO DESCOMENTAR ATÉ O FIM DO MINICURSO!!!
+      const firebaseConfig = {
+        apiKey: "AIzaSyDIbH6dSzqjglcNq2IZu28vnqtB9gtNhBE",
+        authDomain: "workshop-comp.firebaseapp.com",
+        databaseURL: "https://workshop-comp-default-rtdb.firebaseio.com",
+        projectId: "workshop-comp",
+        storageBucket: "workshop-comp.appspot.com",
+        messagingSenderId: "224981385074",
+        appId: "1:224981385074:web:475a0d9b747392758127eb",
+      };
+
+      // Inicializa o Firebase
+      const app = initializeApp(firebaseConfig);
+      console.log("Firebase inicializado:", app);
+    </script>
+
+    <!-- Script principal que realiza o CRUD no banco de dados -->
+    <script type="module" src="js/script.js"></script>
+  </body>
+</html>
